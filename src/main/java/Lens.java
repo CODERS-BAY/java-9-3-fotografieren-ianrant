@@ -1,12 +1,6 @@
 public class Lens {
 
-    /*
-
-    Außerdem besitzt eine Kamera ein Objektiv Lens welches eine minimale und maximale Brennweite besitzt.
-
-     */
-
-    private static int numberOfLenses = 0;
+    private static int NUMBER_OF_LENSES = 0;
     private double minFocalLength;
     private double maxFocalLength;
 
@@ -14,9 +8,9 @@ public class Lens {
         if (minFocalLength < maxFocalLength) {
             this.minFocalLength = minFocalLength;
             this.maxFocalLength = maxFocalLength;
-            numberOfLenses++;
+            NUMBER_OF_LENSES++;
         } else {
-            System.out.println("!!!!!Your lens probably will not work, ztoopit!!!!!");
+            throw new IllegalArgumentException("!!!!!Your lens probably will not work, ztoopit!!!!!");
         }
 
     }
@@ -40,6 +34,6 @@ public class Lens {
     @Override
     public String toString() {
         return "The lens has a minimum focal length of " + minFocalLength +
-                " and a minimum of " + maxFocalLength;
+                " and a minimum of " + maxFocalLength + ".\n";
     }
 }
